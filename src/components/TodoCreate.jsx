@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import '../App.css'
 function TodoCreate({ oneCreateTodo }) {
   const [newTodo, setNewTodo] = useState('')
+
+  const inputValueClear = ()=> {
+    setNewTodo('');
+  }
   const createTodo = () => {
     if (!newTodo) return;
     const request = {
@@ -9,6 +13,7 @@ function TodoCreate({ oneCreateTodo }) {
       content: newTodo
     }
     oneCreateTodo(request);
+    inputValueClear();
   }
   return (
     <div className='todo-create '>
