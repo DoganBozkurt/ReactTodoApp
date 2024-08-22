@@ -15,7 +15,7 @@ function App() {
   const updateTodo = (newTodo) => {
     const updatedTodo = todo.map((e) => {
       if (e.id !== newTodo.id) {
-        return todo;
+        return e;
       }
       return newTodo;
     })
